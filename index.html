@@ -13,7 +13,30 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  </head>
+        <script>
+
+          function download(data, filename, type) {
+              var file = new Blob([data], {
+                  type: type
+              });
+              if (window.navigator.msSaveOrOpenBlob) // IE10+
+                  window.navigator.msSaveOrOpenBlob(file, filename);
+              else { // Others
+                  var a = document.createElement("a"),
+                      url = URL.createObjectURL(file);
+                  a.href = url;
+                  a.download = filename;
+                  document.body.appendChild(a);
+                  a.click();
+                  setTimeout(function () {
+                      document.body.removeChild(a);
+                      window.URL.revokeObjectURL(url);
+                  }, 0);
+              }
+          }
+      </script>
+  
+      </head>
   <body>
     <section>
       <h1>AS31 -- Intel 8051 Assembler -- Online </h1>
@@ -28,9 +51,17 @@ mov P1, #11h
 sjmp main</textarea>
     <button class="btn btn-success" onclick="build()">Assemble</button><br>
     Output Hex:
-    <textarea class="form-control" id="output" rows="8"></textarea>
+    <textarea readonly class="form-control" id="output" rows="8"></textarea>
+    <button class="btn btn-success"
+                onclick="download(document.getElementById('output').innerHTML,'program.hex','plain/text')">Download</button><br><br>
+
+
     Output List:
-    <textarea class="form-control" id="outputlst" rows="8"></textarea>
+    <textarea readonly class="form-control" id="outputlst" rows="8"></textarea>
+    <button class="btn btn-success"
+                onclick="download(document.getElementById('outputlst').innerHTML,'program.lst','plain/text')">Download</button><br><br>
+
+
 
     <script>
       function build() {
