@@ -1,0 +1,68 @@
+AC_INIT(as31/as31.c)
+AM_INIT_AUTOMAKE(as31, 2.3.1)
+
+dnl ********************************************************************
+dnl Minimal Requirements
+dnl ********************************************************************
+
+AC_PROG_CC
+AC_PROG_YACC
+AC_PROG_INSTALL
+
+LIBS="$LIBS"
+CFLAGS="$CFLAGS"
+AC_SUBST(LIBS)
+AC_SUBST(CFLAGS)
+
+dnl ********************************************************************
+dnl Options
+dnl ********************************************************************
+
+option_gtk=false
+AC_MSG_CHECKING(for gtk)
+AC_ARG_ENABLE(gtk,
+  [  --enable-gtk            build as31 with graphical user interface (alpha)],
+  gtk="$enableval", gtk="no")
+case "$gtk" in
+  yes)
+    option_gtk=true
+    AC_DEFINE(OPTION_GTK, 1)
+    AC_MSG_RESULT(yes)
+    ;;
+  *)
+    AC_DEFINE(OPTION_GTK, 0)
+    AC_MSG_RESULT(no)
+    ;;
+esac
+
+dnl ********************************************************************
+dnl Check for Gtk GUI
+dnl ********************************************************************
+
+GUI_LIBS=""
+GUI_CFLAGS=""
+AC_SUBST(GUI_LIBS)
+AC_SUBST(GUI_CFLAGS)
+
+if test x$option_gtk = xtrue ; then
+  have_gtk=false
+  AM_PATH_GTK(1.0.1, have_gtk=true)
+  if test x$have_gtk = xfalse ; then
+    option_gtk=false
+  else
+    GUI_LIBS="$GTK_LIBS"
+    GUI_CFLAGS="$GTK_CFLAGS"
+  fi
+fi
+
+dnl ********************************************************************
+dnl Conditional 
+dnl ********************************************************************
+
+AM_CONDITIONAL(OPTION_GTK, test x$option_gtk = xtrue)
+
+dnl ********************************************************************
+dnl Output
+dnl ********************************************************************
+
+AC_OUTPUT(Makefile as31/Makefile examples/Makefile)

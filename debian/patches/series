@@ -1,0 +1,7 @@
+elide_errant_text
+regenerate_parser.c
+as31-mkstemps.patch
+as31-fix-duplicate-line.patch
+update-version
+helptext
+update_sizebuf_types.patch

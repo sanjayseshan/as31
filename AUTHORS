@@ -1,0 +1,20 @@
+
+ as31 - 8031/8051 Assembler
+ --------------------------
+
+ Written by:
+	Ken Stauffer <stauffer@cpsc.ucalgary.ca> 
+	Paul Stoffregen <paul@pjrc.com>
+	Bernd Porr <Bernd.Porr@cn.stir.ac.uk>
+	Alexander 'E-Razor' Krause <admin@erazor-zone.de>
+	Martin Langer <martin-langer@gmx.de>
+
+ Maintained at:  
+	http://www.pjrc.com/tech/8051/
+     	http://www.cn.stir.ac.uk/~bp1/as31/
+
+ Please report problems to:  
+	Paul Stoffregen <paul@pjrc.com>
+        Bernd Porr <Bernd.Porr@cn.stir.ac.uk>
+	Martin Langer <martin-langer@gmx.de>
+

@@ -1,0 +1,9 @@
+
+ as31 - 8031/8051 Assembler
+ --------------------------
+
+ To build and install as31 on Linux, type
+
+	./configure
+	make
+	make install

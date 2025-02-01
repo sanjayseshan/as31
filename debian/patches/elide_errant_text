@@ -1,0 +1,15 @@
+Description: remove errant license text
+   Per Message-ID: <4E872048.3040103@pjrc.com>, remove line from example
+   source file that implies DFSG non-compliance despite overall BSD license
+   assertion, closes: #643923
+Author: Bdale Garbee <bdale@gag.com>
+Bug-Debian: http://bugs.debian.org/643923
+
+--- as31-2.3.1.orig/examples/paulmon1.asm
++++ as31-2.3.1/examples/paulmon1.asm
+@@ -1,5 +1,4 @@
+ ;  PAULMON 8051 Debugger by Paul Stoffregen
+-;   Please distribute freely -- may not be sold, period.
+ 
+ ;        .command +h58   ;set page height to 58 in listing file...
+ 

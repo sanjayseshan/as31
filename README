@@ -1,0 +1,12 @@
+
+ as31 - 8031/8051 Assembler
+ --------------------------
+
+ This is a beta test release of AS31.
+ To build and install as31 on Linux, read INSTALL
+
+ Please report any problems to
+	Paul Stoffregen <paul@pjrc.com>
+	Martin Langer <martin-langer@gmx.de>
+
+ Thank you.  We hope you find AS31 useful.

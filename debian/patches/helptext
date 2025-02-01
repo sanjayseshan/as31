@@ -1,0 +1,12 @@
+diff --git a/as31/as31.c b/as31/as31.c
+index 8e5580c..f4e2515 100644
+--- a/as31/as31.c
++++ b/as31/as31.c
+@@ -77,7 +77,6 @@ int main(int argc, char **argv)
+ void showhelp(const char *cmd)
+ {
+ 	fprintf(stderr, "AS31 %s\n", VERSION);
+-	fprintf(stderr, "Please report problems to: paul@pjrc.com\n\n");
+ 	fprintf(stderr,
+ 		"Usage: %s [-h] [-l] [-s] [-v] [-Aarg] [-Ffmt] [-Ofile] file.asm\n\n",
+ 		cmd);

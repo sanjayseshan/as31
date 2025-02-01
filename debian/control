@@ -1,0 +1,14 @@
+Source: as31
+Section: devel
+Priority: optional
+Maintainer: Bdale Garbee <bdale@gag.com>
+Build-Depends: debhelper (>= 13)
+Standards-Version: 4.6.0
+Vcs-Git: git://git.gag.com/debian/as31
+Vcs-Browser: https://git.gag.com/?p=debian/as31
+
+Package: as31
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Intel 8031/8051 assembler
+ This is a fast, simple, easy to use Intel 8031/8051 assembler.

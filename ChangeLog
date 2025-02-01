@@ -1,0 +1,51 @@
+
+ as31 - 8031/8051 Assembler
+ http://wiki.erazor-zone.de/doku.php/wiki:projects:linux:as31
+ --------------------------
+
+ REVISION HISTORY:
+
+	Jan. 19, 1990	Created. (Ken Stauffer).
+
+	Jan. 30, 1990	Theo played here.
+
+	Late 1994	Paul Stoffregen updates the code
+
+	Sept 1995	bug fixes, add obsure option for cgi
+
+	April 2000	fix filename handling
+			convert everything to ANSI C and bison
+			properly handle 0b0h as hex 0xB0, not binary 0
+			Make most errors into warning, and modify parser
+			to recover and continue to the end of the file
+			so that all warning are shown.
+
+	March 2001	fix crash with srecord format
+			command line version returns non-zero on error
+
+	July 2003	added include directive (Bernd Porr)
+
+	March 2004	Alexander 'E-Razor' Krause <alexander.krause@erazor-zone.de>:
+			removed bug when using more than 1 .inc
+			tmp filename is now as-uid-random
+			remove tmp_file when ready
+
+	May  06, 2004	Alexander 'E-Razor' Krause <alexander.krause@erazor-zone.de>:
+			compiler error on gcc < 3 solved
+
+	May  18, 2004	Martin Langer <martin-langer@gmx.de>:
+	(Version 2.2.1)	- fixing some visible bugs
+			- adds the missing -s option
+
+	Mar 09, 2005	Martin Langer <martin-langer@gmx.de>:
+	(Version 2.3.0)	- automake scripts introduced
+			- old static Makefile removed
+			- write output to custom file added, using -Ofilename
+			- command options -v and -h added
+			- I've tried to figure out the license, see NEWS
+			- manpage modifications
+			- lots of small fixes and cleanups
+			
+	Sep 05, 2005	Alexander 'E-Razor' Krause <alexander.krause@erazor-zone.de>:
+	(Version 2.3.1)	- 'Location counter overlaps' on 64bit systems solved
+
