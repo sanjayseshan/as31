@@ -53,13 +53,13 @@ sjmp main</textarea>
     Output Hex:
     <textarea readonly class="form-control" id="output" rows="8"></textarea>
     <button class="btn btn-success"
-                onclick="download(document.getElementById('output').innerHTML,'program.hex','plain/text')">Download</button><br><br>
+                onclick="download(document.getElementById('output').value,'program.hex','plain/text')">Download</button><br><br>
 
 
     Output List:
     <textarea readonly class="form-control" id="outputlst" rows="8"></textarea>
     <button class="btn btn-success"
-                onclick="download(document.getElementById('outputlst').innerHTML,'program.lst','plain/text')">Download</button><br><br>
+                onclick="download(document.getElementById('outputlst').value,'program.lst','plain/text')">Download</button><br><br>
 
 
 
